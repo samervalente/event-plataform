@@ -1,0 +1,71 @@
+Aula 01 - O início
+
+01 - Vite - serve para criar projetos front-end, é como se fosse uma versão mais moderna do React, só que os navegadores mais antigos não suportam ele.
+
+02 - O vite usa Ecma Scripot Modules (ESM), que é um motor de importação e exportação de arquivos/pacotes nativo do próprio navegador. Com isso, a vantagem é que a aplicação não precisa fazer o bundle, economizando processamento e consequentemente não utilizando o webpack.
+
+npm create vite@latest
+
+03 - Instalando algumas bibliotecas:
+npm i tailwindcss postcss autoprefixer -D
+npx tailwindcss init -p (cria o arquivo de configuração do postcss)
+O postcss é uma ferramenta pra automatizar tarefas dentro do css
+
+04 - configurando o tailwind
+=>tailwind.config.js
+em "content": preciso dizer quais arquivos vão utilizar o tailwind
+'./src/**/*.tsx -> dentro de qualquer diretório da pasta src, arquivos que terminarem com a extensão tsx, irão receber estilização do tailwind
+
+=>src/styles/global.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+05 - Instalando extensões
+GraphQL
+Tailwind CSS
+Post CSS 
+
+algumas propriedades do tailwind
+text-2xl => font-size:24px 
+text-violet-500 
+
+ou no arquivo global.css:
+.title{
+@apply text-2xl font-bold text-violet-500
+}
+
+06 - Configurando o Graph CMS (Content Management SYstem)
+Permite a criação de paineis administrativos caso algum cliente queira utilizar. Isso é possível devido ao Headless CMS (GraphCMS/Painel de ADM) que possui dados fornecidso através de uma API (Rest API ou GraphQL)
+
+O react irá consumir essa API do CMS
+
+Plataforma: Graph CMS
+
+07 - Formas de manipular dados no GRaph CMS
+query = buscar dados
+
+sintaxe:
+query{ dados que eu quero buscar}
+
+ex:
+query{
+ lessons {
+   
+ }
+
+
+}
+
+mutation = criar, alterar ou deletar dados
+
+08 - Fazendo requisições para api
+ferramenta para fazer as requisições na api:
+apollo
+
+(graphcms não aceita de forma eficiente o axios ou fetch, visto que é preciso fazer vários "rodeios" para fazer a requisição)
+para isso:
+npm i @apollo/client graphql
+
+
+
